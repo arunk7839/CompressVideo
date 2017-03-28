@@ -9,11 +9,11 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.PowerManager;
 import android.provider.MediaStore;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.netcompss.ffmpeg4android.CommandValidationException;
@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     String vkLogPath=null;
     String outputVideoPath=null;
 
+    Button btn_captureVideo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +44,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+
+
+        btn_captureVideo=(Button)findViewById(R.id.btn_captureVideo);
+
+        btn_captureVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 captureVideo();
+
             }
         });
+
     }
 
 
